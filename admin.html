@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>لوحة إدارة النتائج</title>
+
+    <link rel="stylesheet" href="admin.css">
+
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>لوحة إدارة نتائج الشهادة الإعدادية</h1>
+        <p>رفع وتحويل ملف Excel إلى قاعدة بيانات الموقع</p>
+    </div>
+
+    <div class="card">
+
+        <h2>📂 اختيار ملف Excel</h2>
+
+        <input type="file" id="excelFile" accept=".xlsx,.xls">
+
+        <div class="actions">
+
+            <button id="uploadBtn">
+                📤 رفع وتحويل
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat-box">
+            <h3>عدد الطلاب</h3>
+            <span id="studentCount">0</span>
+        </div>
+
+        <div class="stat-box">
+            <h3>الناجحين</h3>
+            <span id="successCount">0</span>
+        </div>
+
+        <div class="stat-box">
+            <h3>الراسبين</h3>
+            <span id="failCount">0</span>
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>🔍 بحث داخل البيانات</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="اكتب اسم الطالب أو رقم الجلوس">
+
+    </div>
+
+    <div class="actions">
+
+        <button id="downloadBtn">
+            📥 تنزيل data.json
+        </button>
+
+        <button id="refreshBtn">
+            🔄 تحديث النتائج
+        </button>
+
+        <button id="deleteBtn">
+            🗑 حذف البيانات
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        <h2>معاينة البيانات</h2>
+
+        <table id="previewTable">
+
+            <thead>
+
+                <tr>
+
+                    <th>رقم الجلوس</th>
+
+                    <th>الاسم</th>
+
+                    <th>المدرسة</th>
+
+                    <th>المجموع</th>
+
+                    <th>الحالة</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>
